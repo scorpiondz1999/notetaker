@@ -21,6 +21,17 @@ app.get("/notes", (req, res) => {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
+app.post("/api/notes", (req, res) => {
+  const newNote = req.body;
+  newNote.id = uuid();
+
+  getNotes.push(newNote);
+  fs.writeFileSync(
+    path.join(__dirname, "./db/db.json"),
+    JSON.stringify(getNotes, null, 2)
+  );
+  res.json(newNote);
+});
 
 
 
