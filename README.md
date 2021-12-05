@@ -21,3 +21,6 @@ Application will allow user to be able to save the notes and won't lose them eve
 Application will allow user to be delete notes
 
 ![2021-12-05](https://user-images.githubusercontent.com/84550325/144761832-f5f0b537-4a11-49d7-98c3-e1bed2c5e5eb.png)
+
+![image](https://user-images.githubusercontent.com/84550325/144762103-0e08ed3e-813d-4297-95d2-bba0fa0df25e.png)
+
