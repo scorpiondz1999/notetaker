@@ -34,17 +34,22 @@ app.post("/api/notes", (req, res) => {
   res.json(newNote);
 });
 
+app.delete("/api/notes/:id", (req, res) => {
+  const id = req.params.id;
+  for (let i = 0; i < getNotes.length; i++) {
+    let note = getNotes[i];
 
-
-
-
-
-
-
-
-
-
-
+    if (note.id == id) {
+      getNotes.splice(i, 1);
+      fs.writeFileSync(
+        path.join(__dirname, "./db/db.json"),
+        JSON.stringify(getNotes, null, 2)
+      );
+      break;
+    }
+  }
+  res.json(true);
+});
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
